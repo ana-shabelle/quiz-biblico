@@ -1,0 +1,44 @@
+<!-- templates/resultado.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado do Quiz Bíblico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Resultado Final</h1>
+
+        <p><strong>Parabéns, {{ nome }}!</strong> Você concluiu o quiz!</p>
+        <p>✨ Acertos: <strong>{{ score }}</strong> de <strong>{{ total }}</strong></p>
+        <p>📊 Aproveitamento: <strong>{{ percentual }}%</strong></p>
+
+        <hr>
+
+        <h2>🔍 Revisão das Respostas</h2>
+        <ul>
+            {% for resposta in respostas %}
+                <li>
+                    <p><strong>{{ loop.index }}. {{ resposta.pergunta }}</strong></p>
+                    <p>✅ Sua resposta: <strong>{{ resposta.resposta_usuario if resposta.resposta_usuario else "Não respondeu" }}</strong></p>
+
+                    {% if resposta.status == "Correta" %}
+                        <p style="color: green;"><strong>✔️ Você acertou!</strong></p>
+                    {% else %}
+                        <p style="color: red;"><strong>❌ Você errou.</strong></p>
+                        <p>📌 Resposta correta: <strong>{{ resposta.resposta_certa }}</strong></p>
+                    {% endif %}
+
+                    <p>📖 Referência: {{ resposta.versiculo }}</p>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <p><a href="/">🔄 Refazer o Quiz</a></p>
+    </div>
+</body>
+</html>
+
+

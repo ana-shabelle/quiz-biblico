@@ -1,0 +1,63 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+}
+
+.container {
+    background: #ffffffcc;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4e3b31;
+    margin-bottom: 10px;
+}
+
+.versiculo {
+    font-style: italic;
+    text-align: center;
+    color: #6a4c39;
+    margin-bottom: 30px;
+}
+
+.pergunta {
+    margin-bottom: 25px;
+    background: #f8f5f2;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #e2d1c3;
+}
+
+.opcoes {
+    margin-top: 10px;
+}
+
+.opcao {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #937963;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #7d6654;
+}
